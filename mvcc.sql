@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Мар 22 2024 г., 05:59
+-- Время создания: Июн 10 2024 г., 18:27
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `mvc`
+-- База данных: `mvcc`
 --
 
 -- --------------------------------------------------------
@@ -82,14 +82,6 @@ CREATE TABLE `employees` (
   `Image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Дамп данных таблицы `employees`
---
-
-INSERT INTO `employees` (`EmployeeID`, `FirstName`, `LastName`, `MiddleName`, `Gender`, `DateOfBirth`, `Address`, `DepartmentID`, `UserRoleID`, `PositionID`, `CompoundID`, `Image`) VALUES
-(55, 'uiuhiuh', 'ihuih', 'iuhiuh', 'Male', '2024-03-01', 'iojoiad', 1, 28, 1, 1, 'uploads/IMG-65fd07394c6964.95569975.png'),
-(56, 'ааа', 'а', 'п', 'Male', '2024-03-01', 'ааа', 3, 29, 1, 1, 'uploads/IMG-65fd09c965bc92.98841510.png');
-
 -- --------------------------------------------------------
 
 --
@@ -152,7 +144,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`UserRoleID`, `name`, `login`, `password`, `role`) VALUES
 (13, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
 (28, 'asd', 'asd', '7815696ecbf1c96e6894b779456d330e', 'employee'),
-(29, 'нефор', 'нефор', 'b592ad20e034eaeeaae5261943ef32b4', 'employee');
+(29, 'нефор', 'нефор', 'b592ad20e034eaeeaae5261943ef32b4', 'employee'),
+(30, 'Бульба', 'qwe@rr.com', '8068c76c7376bc08e2836ab26359d4a4', 'quest');
 
 --
 -- Индексы сохранённых таблиц
@@ -237,7 +230,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserRoleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `UserRoleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

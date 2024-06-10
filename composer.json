@@ -1,0 +1,26 @@
+{
+    "name": "psina3232/practice_serve",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zhura",
+            "email": "zhuravlevkos9@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4 | ^8.0",
+        "illuminate/database": "^12.0@dev",
+        "illuminate/events": "^12.0@dev",
+        "nikic/fast-route": "^2.0@dev",
+        "dendome/collect": "dev-main",
+        "dendome/session": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "core/Src/",
+            "": "app/"
+        }
+    }
+}

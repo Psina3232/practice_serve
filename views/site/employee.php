@@ -7,9 +7,8 @@
    <label class="flex flex-col gap-1 items-center">Отчество<input class="h-10 w-60 bg-gray-200" type="text" name="MiddleName"></label>
    <label class="flex flex-col gap-1 items-center">Пол
       <select class="h-10 w-60 bg-gray-200" name="Gender">
-         <option value="">Выберите отдел</option>
-         <option value="Male">Мужчина</option>
-         <option value="Female">Выберите отдел</option>
+         <option value="Male">Мужской</option>
+         <option value="Female">Женский</option>
 
       </select>
    </label>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Июн 10 2024 г., 18:27
+-- Время создания: Июн 10 2024 г., 23:10
 -- Версия сервера: 10.4.32-MariaDB
 -- Версия PHP: 8.2.12
 
@@ -37,7 +37,9 @@ CREATE TABLE `compounds` (
 --
 
 INSERT INTO `compounds` (`CompoundID`, `CompoundName`) VALUES
-(1, 'aaa');
+(3, 'профессорско-преподавательский'),
+(4, 'учебно-вспомогательный'),
+(6, 'административно-хозяйственный');
 
 -- --------------------------------------------------------
 
@@ -56,10 +58,8 @@ CREATE TABLE `departments` (
 --
 
 INSERT INTO `departments` (`DepartmentID`, `DepartmentName`, `DepartmentType`) VALUES
-(1, 'awdawd', 'awdawd'),
-(2, 'sss', 'sss'),
-(3, 'jenya', 'jenyt'),
-(4, 'awdsaw', 'sadwdawddsd');
+(6, 'Департамент образования', 'Образование'),
+(7, 'Департамент спорта', 'Спорт');
 
 -- --------------------------------------------------------
 
@@ -82,6 +82,14 @@ CREATE TABLE `employees` (
   `Image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Дамп данных таблицы `employees`
+--
+
+INSERT INTO `employees` (`EmployeeID`, `FirstName`, `LastName`, `MiddleName`, `Gender`, `DateOfBirth`, `Address`, `DepartmentID`, `UserRoleID`, `PositionID`, `CompoundID`, `Image`) VALUES
+(59, 'Наталья', 'Морская', 'Пехота', 'Male', '2024-05-23', 'бейкер стрис 221б', 6, 32, 6, 3, 'uploads/IMG-6667665097d5c1.69755970.jpg'),
+(60, 'qew', 'qwe', 'ewq', 'Male', '1990-06-12', 'бейкер стрис 221б', 6, 33, 1, 3, 'uploads/IMG-666766ab87b1c0.54547206.');
+
 -- --------------------------------------------------------
 
 --
@@ -98,10 +106,10 @@ CREATE TABLE `positions` (
 --
 
 INSERT INTO `positions` (`PositionID`, `PositionName`) VALUES
-(1, 'копирайтер'),
-(2, 'кодер'),
-(5, 'аналитик'),
-(6, 'бездельник');
+(1, 'Кодер'),
+(2, 'Сварщик'),
+(5, 'Слесарь'),
+(6, 'Сисадмин');
 
 -- --------------------------------------------------------
 
@@ -120,8 +128,8 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `text`) VALUES
-(1, 'ноовый1', 'фцвгнфгшцнвшфнцшгвншнш'),
-(2, 'ноовый2', 'фцвгнфгшцнвшфнцшгвншнш');
+(1, 'Чистый0', 'qweasd'),
+(2, 'Чистый1', 'qweasd');
 
 -- --------------------------------------------------------
 
@@ -142,10 +150,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`UserRoleID`, `name`, `login`, `password`, `role`) VALUES
-(13, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
-(28, 'asd', 'asd', '7815696ecbf1c96e6894b779456d330e', 'employee'),
-(29, 'нефор', 'нефор', 'b592ad20e034eaeeaae5261943ef32b4', 'employee'),
-(30, 'Бульба', 'qwe@rr.com', '8068c76c7376bc08e2836ab26359d4a4', 'quest');
+(13, 'admin', 'admin', '200820e3227815ed1756a6b531e7e0d2', 'admin'),
+(30, 'Бульба', 'qwe@rr.com', '8068c76c7376bc08e2836ab26359d4a4', 'employee'),
+(31, 'сквидвард', 'asd@gmail.com', '200820e3227815ed1756a6b531e7e0d2', 'employee'),
+(32, 'святополк', 'ww@gmail.com', '200820e3227815ed1756a6b531e7e0d2', 'employee'),
+(33, 'авпы', 'qq@gmail.com', '200820e3227815ed1756a6b531e7e0d2', 'employee');
 
 --
 -- Индексы сохранённых таблиц
@@ -200,19 +209,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `compounds`
 --
 ALTER TABLE `compounds`
-  MODIFY `CompoundID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `CompoundID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `departments`
 --
 ALTER TABLE `departments`
-  MODIFY `DepartmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `DepartmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `EmployeeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `EmployeeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT для таблицы `positions`
@@ -230,7 +239,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserRoleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `UserRoleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

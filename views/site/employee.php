@@ -1,6 +1,6 @@
 <h2 class="text-center text-4xl my-12">Регистрация нового сотрудника</h2>
 <h3><?= $message ?? ''; ?></h3>
-<form method="post" enctype="multipart/form-data" class="flex flex-col items-center max-w-xs border-2 border-blue-700 rounded-xl mx-auto mt-5 p-5 gap-2.5">
+<form method="post" enctype="multipart/form-data" class="flex flex-col items-center max-w-xs border-2 border-zinc-800 rounded-xl mx-auto mt-5 p-5 gap-2.5">
    <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
    <label class="flex flex-col gap-1 items-center">Имя<input class="h-10 w-60 bg-gray-200" type="text" name="FirstName"></label>
    <label class="flex flex-col gap-1 items-center">Фамилия<input class="h-10 w-60 bg-gray-200" type="text" name="LastName"></label>
@@ -22,7 +22,7 @@
          <?php endforeach; ?>
       </select>
    </label>
-   <label class="flex flex-col gap-1 items-center">Сотрудники
+   <label class="flex flex-col gap-1 items-center">Должность
       <select class="h-10 w-60 bg-gray-200" name="PositionID">
          <option value="">Выберите должность</option>
          <?php foreach($positions as $position): ?>
@@ -38,7 +38,7 @@
          <?php endforeach; ?>
       </select>
    </label>
-   <label class="flex flex-col gap-1 items-center">Пользователи
+   <label class="flex flex-col gap-1 items-center">Пользователь
       <select class="h-10 w-60 bg-gray-200" name="UserRoleID">
          <option value="">Выберите пользователя</option>
          <?php foreach($users as $user): ?>
@@ -46,6 +46,6 @@
          <?php endforeach; ?>
       </select>
    </label>
-   <label class="flex flex-col gap-1 items-center">Изображение <input class="h-10 w-60 bg-gray-200" type="file" name="Image"></label>
-   <button class="bg-blue-500 w-60 h-10 text-white text-xl font-bold">Зарегистрироваться</button>
+   <label class="flex flex-col gap-1 items-center">Фотография <input class="h-10 w-60 bg-gray-200" type="file" name="Image"></label>
+   <button class="bg-zinc-800 w-60 h-10 text-white text-xl font-bold">Зарегистрировать</button>
 </form>
